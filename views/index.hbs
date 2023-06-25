@@ -10,7 +10,6 @@
                 voluptatibus saepe?</p>
         </div>
     </div>
-
     <!-- inicio novedades y testimonios -->
     <div class="row my-3">
 
@@ -18,15 +17,12 @@
             <h2>Novedades</h2>
             <ul class="lista-novedades">
                 {{#each novedades}}
-                <li><a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modal{{id}}"><img src="{{imagen}}" alt="{{titulo}}">{{titulo}}</a></li>
-
+                <li><a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modal{{id}}"><img
+                            src="{{imagen}}" alt="{{titulo}}">{{titulo}}</a></li>
                 {{/each}}
-
             </ul>
         </div>
         <!-- inicio novedades -->
-
-
         <!-- Modal -->
         {{#each novedades}}
         <div class="modal fade" id="modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -41,7 +37,6 @@
                         <h4>{{subtitulo}}</h4>
                         <p>{{cuerpo}}</p>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -60,28 +55,19 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active testimonio">
-
-
                         <h5>Testimonio</h5>
                         <p>La mejor birra del mundo!</p>
                         <p>Fabricio Rocca.</p>
-
                     </div>
                     <div class="carousel-item testimonio">
-
-
                         <h5>Testimonio</h5>
                         <p>La mejor birra del mundo 2!</p>
                         <p>Aleberto Montt.</p>
-
                     </div>
                     <div class="carousel-item testimonio">
-
-
                         <h5>Testimonio</h5>
                         <p>Excelente cerveza!</p>
                         <p>Silvina Ravera.</p>
-
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
@@ -120,7 +106,6 @@
         <div class="col-lg-8 offset-lg-2">
             <h2>Nosotros</h2>
             <div class="row row-cols-1 row-cols-md-4 g-4">
-
                 <!-- modulo a reteir-->
                 <div class="col">
                     <div class="card">
@@ -169,10 +154,8 @@
             </div>
         </div>
     </div><!-- fin div nosotros -->
-
 </div> <!-- cierro container fluid -->
 <!-- inicio conocenos-->
-
 <div id="conocenos" class="row py-4 scroll_section">
     <div class="col-md-4 offset-md-2">
         <h2>Visitanos</h2>
@@ -181,7 +164,6 @@
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d412.8272549990836!2d-58.406502739987744!3d-34.58223630933918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb57d27fc553d%3A0x2c170b14e6694c5f!2sBulnes%202587%2C%20C1425DKS%20CABA!5e0!3m2!1ses!2sar!4v1686753438419!5m2!1ses!2sar"></iframe>
         </div>
-
         <!-- fin  mapa-->
     </div>
     <!-- inicio formulario -->
@@ -197,11 +179,9 @@
                 <input type="text" class="form-control" id="apellido" name="apellido">
             </div>
             <div class="col-12">
-
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="email@email.com">
             </div>
-
             <div class="col-12">
                 <label for="tel" class="form-label">Tel</label>
                 <input type="text" class="form-control" id="tel" placeholder="..." name="tel">
@@ -216,6 +196,5 @@
         </form>
         <p>{{ message }}</p>
     </div>
-
     <!-- fin formulario -->
 </div><!-- cierra div con id conocenos-->
