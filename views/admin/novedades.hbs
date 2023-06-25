@@ -1,0 +1,62 @@
+<div class="login_section container">
+  {{!-- fila1--}}
+  <div class="row">
+    <div class="col">
+      <p class="text-end">
+        <span>Hola {{persona}}!</span>
+        <a href="/admin/login/logout" class="btn btn-danger">Cerrar sesión<i class="fasfa-sign-out-alt"></i></a>
+      </p>
+    </div>
+  </div>{{!-- fin fila 1--}}
+  {{!-- fila2--}}
+  <div class="row">
+    <div class="col-7" style="margin-top:-9px;">
+      <h2>Listado de novedades</h2>
+    </div>
+    <div class="col-2 text-right">
+      <a href="/admin/novedades/agregar" class="btn btn-success"><i class="fas fa-plus"></i>Nuevo</a>
+    </div>
+    <div class="col-3 text-right">
+      <form class="form-inline" action="/admin/novedades" method="get">
+        <input class="form-control" type="search" placeholder="Buscar" aria-label="Search" name="q" {{#if q}}
+          value="{{q}}" {{/if}}>
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+          <i class="fa fa-search" aria-hiddden="true"></i>
+        </button>
+
+
+
+      </form>
+
+    </div>
+  </div>
+  {{!-- fin fila 2--}}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Imagen</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each novedades}}
+      <tr>
+        <th scope="row">{{id}}</th>
+        <td>{{titulo}}</td>
+        <td>{{{imagen}}}</td>
+        <td class="text-right"><a href="/admin/novedades/modificar/{{id}}" class="btn btn-secondary"><i
+              class="fas fa-pencil-alt"></i> </a>
+          <a href="/admin/novedades/eliminar/{{id}}" class="btn btn-secondary"><i class="fas fa-trash"></i></a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{#if is_search}}
+  {{#unless novedades.length}}
+  No se encontraron resultados para "<b>{{q}}</b>"
+  {{/unless}}
+  {{/if}}
+</div> {{!-- fin container--}}

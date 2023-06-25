@@ -1,0 +1,23 @@
+<div class="login_section">
+    <div class="row">
+        <div class="col">
+            <form action="/admin/login" method="post">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Usuario:</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="usuario">
+                </div>
+                <div class="mb-3">
+                <label for="inputPassword5" class="form-label">Password:</label>
+                <input type="password" id="inputPassword5" class="form-control" aria-labelledby="passwordHelpBlock"
+                    name="password">
+               </div>
+               <div class="mb-3">
+                <button type="submit" class="btn btn-dark">Enviar</button>
+                </div>
+            </form>
+            {{#if error}}
+            <p>Usuario o contraseña incorrecta!</p>
+            {{/if}}
+        </div>
+    </div>
+</div>

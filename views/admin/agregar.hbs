@@ -1,0 +1,30 @@
+<div class="login_section">
+    <div class="row">
+        <div class="col">
+            <h4>Agregar una novedad:</h4>
+            <form action="/admin/novedades/agregar" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label">Titulo:</label>
+                    <input type="text" class="form-control" name="titulo">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Subtitulo:</label>
+                    <input type="text" class="form-control" name="subtitulo">
+                </div>
+
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Ingresar imagen:</label>
+                    <input class="form-control" type="file" name="imagen" id="formFile">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Cuerpo:</label>
+                    <textarea class="form-control" name="cuerpo"></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark">Guardar</button>
+            </form>
+            {{#if error}}
+            <p>{{message}}</p>
+            {{/if}}
+        </div>
+    </div>
+</div>
