@@ -1,6 +1,6 @@
-<div class="login_section container">
+<div class="login_section container ">
   {{!-- fila1--}}
-  <div class="row">
+  <div class="row sesion">
     <div class="col">
       <p class="text-end">
         <span>Hola {{persona}}!</span>
@@ -8,51 +8,99 @@
       </p>
     </div>
   </div>{{!-- fin fila 1--}}
-  {{!-- fila2--}}
+
+<div class="container">
   <div class="row">
-    <div class="col-7" style="margin-top:-9px;">
-      <h2>Listado de novedades</h2>
+    <div class="col-6">
+      <form action="/admin/novedades" method="get">
+      <div class="input-group">
+        
+        <input type="search" class="form-control" placeholder="Buscar artículo ..." name="q" {{#if q}}
+        value="{{q}}" {{/if}}>
+        <div class="input-group-append">
+          <button class="btn btn-dark boton-buscar" type="submit">
+            <i class="fas fa-search" aria-hiddden="true"></i>
+          </button>
+        </div>
+        
+      </div>
+      </form>
     </div>
-    <div class="col-2 text-right">
-      <a href="/admin/novedades/agregar" class="btn btn-success"><i class="fas fa-plus"></i>Nuevo</a>
+    <div class="col-6 d-flex justify-content-end">
+      <div>
+    <a href="/admin/novedades/agregar" class="btn btn-dark"><i class="fas fa-plus"></i> Nuevo articulo</a>
+  </div>
     </div>
-    <div class="col-3 text-right">
-      <form class="form-inline" action="/admin/novedades" method="get">
-        <input class="form-control" type="search" placeholder="Buscar" aria-label="Search" name="q" {{#if q}}
-          value="{{q}}" {{/if}}>
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">
-          <i class="fa fa-search" aria-hiddden="true"></i>
-        </button>
+  </div>
+</div>
+
+
+{{!-- <div class="container">
+  <div class="row">
+    <div class="col-12">
+      <form action="/admin/novedades" method="get">
+      <div class="input-group">
+        
+        <input type="search" class="form-control" placeholder="Buscar" name="q" {{#if q}}
+        value="{{q}}" {{/if}}>
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="submit">
+            <i class="fas fa-search" aria-hiddden="true"></i>
+          </button>
+        </div>
+        
+      </div>
       </form>
     </div>
   </div>
-  {{!-- fin fila 2--}}
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Titulo</th>
-        <th scope="col">Imagen</th>
-        <th scope="col">Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each novedades}}
-      <tr>
-        <th scope="row">{{id}}</th>
-        <td>{{titulo}}</td>
-        <td>{{{imagen}}}</td>
-        <td class="text-right"><a href="/admin/novedades/modificar/{{id}}" class="btn btn-secondary"><i
-              class="fas fa-pencil-alt"></i> </a>
-          <a href="/admin/novedades/eliminar/{{id}}" class="btn btn-secondary"><i class="fas fa-trash"></i></a>
-        </td>
-      </tr>
-      {{/each}}
-    </tbody>
-  </table>
-  {{#if is_search}}
-  {{#unless novedades.length}}
-  No se encontraron resultados para "<b>{{q}}</b>"
-  {{/unless}}
-  {{/if}}
+</div> --}}
+
+
+{{!-- fila2--}}
+<div class="row listado-novedades">
+  <div class="col-7">
+    <h2>Listado de novedades</h2>
+  </div>
+  {{!-- <div class="col-md-5 d-flex justify-content-end">
+    <a href="/admin/novedades/agregar" class="btn btn-dark"><i class="fas fa-plus"></i> Nuevo articulo</a>
+  </div> --}}
+  {{!-- <div class="col-3 text-right">
+    <form class="form-inline" action="/admin/novedades" method="get">
+      <input class="form-control" type="search" placeholder="Buscar" aria-label="Search" name="q" {{#if q}}
+        value="{{q}}" {{/if}}>
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+        <i class="fa fa-search" aria-hiddden="true"></i>
+      </button>
+    </form>
+  </div> --}}
+</div>
+{{!-- fin fila 2--}}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Imagen</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each novedades}}
+    <tr>
+      <th scope="row">{{id}}</th>
+      <td>{{titulo}}</td>
+      <td>{{{imagen}}}</td>
+      <td class="text-right"><a href="/admin/novedades/modificar/{{id}}" class="btn btn-secondary"><i
+            class="fas fa-pencil-alt"></i> </a>
+        <a href="/admin/novedades/eliminar/{{id}}" class="btn btn-secondary"><i class="fas fa-trash"></i></a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{#if is_search}}
+{{#unless novedades.length}}
+No se encontraron resultados para "<b>{{q}}</b>"
+{{/unless}}
+{{/if}}
 </div> {{!-- fin container--}}

@@ -33,7 +33,7 @@ router.get('/', async function (req, res, next) {
   });
 });
 router.post('/', async (req, res, next) => {
-  console.log(req.body) // chequeo de captura de datos
+  //console.log(req.body) // chequeo de captura de datos
 
   var nombre = req.body.nombre;
   var apellido = req.body.apellido;

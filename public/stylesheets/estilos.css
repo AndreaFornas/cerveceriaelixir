@@ -83,12 +83,14 @@ h2 {
 .testimonios-caja {
     padding: 10px;
 }
+
 .staff {
     background: #efefef;
 }
+
 .mapa iframe {
-width: 100%;
-aspect-ratio: 1.2;
+    width: 100%;
+    aspect-ratio: 1.2;
 }
 
 html {
@@ -96,17 +98,44 @@ html {
 }
 
 .scroll_section {
-        scroll-margin-top: 60px;
+    scroll-margin-top: 60px;
 }
 
 html {
     overflow-x: hidden;
 }
+
 .login_section {
-    margin: 100px 20px; 
+    margin: 100px 20px;
 }
+
 /*,
 *::before,
 *::after {
   box-sizing: ;
 } */
+
+.buscador-novedades {
+
+    margin: 20px auto;
+
+}
+
+.boton-buscador {
+
+    margin-left: 10px;
+}
+
+.sesion {
+
+    margin-right: 0px;
+}
+
+.listado-novedades {
+
+    margin: 40px auto;
+}
+
+.boton-buscar {
+    margin-left: 10px;
+}

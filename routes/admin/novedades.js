@@ -41,7 +41,7 @@ router.get('/', async function (req, res, next) {
 
     res.render('admin/novedades', {
         layout: 'admin/layout',
-        persona: req.session.nombre,
+        usuario: req.session.nombre,
         novedades,
         is_search: req.query.q !== undefined,
         q: req.query.q
@@ -57,7 +57,7 @@ router.get('/eliminar/:id', async (req, res, next) => {
     if (novedad.img_id) {
         await (destroy(novedad.img_id));
     }
-    
+
     await novedadesModel.deleteNovedadesById(id);
     res.redirect('/admin/novedades')
 }); // cierra get de eliminar
@@ -97,7 +97,7 @@ router.post('/agregar', async (req, res, next) => {
             })
         }
     } catch (error) {
-        console.log(error)
+        //console.log(error)
         res.render('admin/agregar', {
             layout: 'admin/layout',
             error: true,
@@ -128,7 +128,7 @@ router.post('/modificar', async (req, res, next) => {
             img_id = null;
             borrar_img_vieja = true;
         } else {
-            if (req.files && Object.keys(req.files).length > 0){
+            if (req.files && Object.keys(req.files).length > 0) {
                 imagen = req.files.imagen;
                 img_id = (await uploader(imagen.tempFilePath)).public_id;
                 borrar_img_vieja = true;
@@ -143,14 +143,14 @@ router.post('/modificar', async (req, res, next) => {
             subtitulo: req.body.subtitulo,
             cuerpo: req.body.cuerpo,
             img_id
-            
+
         }
-        console.log(obj) // para ver si trae los datos
+        //console.log(obj) // para ver si trae los datos
         await novedadesModel.modificarNovedadById(obj, req.body.id);
         res.redirect('/admin/novedades');
     } catch (error) {
 
-        console.log(error)
+        //console.log(error)
         res.render('admin/modificar', {
             layout: 'admin/layout',
             error: true,
